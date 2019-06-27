@@ -61,10 +61,10 @@ server.post("/projects/:id/tasks", existProject, (req, res) => {
 //delete a project with ID presente in the route parameters without being by the Index
 server.delete("/projects/:id", existProject, (req, res) => {
   const { id } = req.params;
-  const project = projects.find(i => i.id === id);
-  const position = projects.indexOf(project);
-  projects.splice(position, 1);
-  return res.send("projeto deletado");
+  const projectIndex = projects.findIndex(i => i.id === id);
+  console.log(projectIndex);
+  projects.splice(projectIndex, 1);
+  return res.send("projeto deletado");
 });
 
 server.listen(3000);
