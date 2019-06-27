@@ -58,7 +58,7 @@ server.post("/projects/:id/tasks", existProject, (req, res) => {
   return res.json(`tarefa adicionada ao projeto ${project.title}`);
 });
 
-//delete a project with ID presente in the route parameters without beig by the Index
+//delete a project with ID presente in the route parameters without being by the Index
 server.delete("/projects/:id", existProject, (req, res) => {
   const { id } = req.params;
   const project = projects.find(i => i.id === id);
